@@ -1,14 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Bandoapp</title>
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+	<h2>Ban Do Danh Sach Phong Ban Dai Hoc Da Lat<h2>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var daiHocDaLat = {lat: 11.956570, lng: 108.443965};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: daiHocDaLat,
+          map: map
+        });
+		// add maker
+        var marker = new google.maps.Marker({
+          position: {lat: 11.957135, lng: 108.445057},
+		  title: 'Library Center',
+          map: map
+        });
+		// add maker
+		var marker = new google.maps.Marker({
+          position: {lat: 11.955991, lng: 108.445363},
+		  title: 'Room A6',
+          map: map
+        });
+      }
+    </script>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIsUWC4nDhb85_7SdxkhfTb6aV2EbGp5I&callback=initMap">
+    </script>
+  </body>
 </html>
